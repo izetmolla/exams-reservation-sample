@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 28, 2020 at 05:37 PM
--- Server version: 8.0.21
--- PHP Version: 7.4.8
+-- Generation Time: Jul 28, 2020 at 08:35 PM
+-- Server version: 8.0.19
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `uet2`
+-- Database: `uetlms`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +33,7 @@ CREATE TABLE `datat_e_provimeve` (
   `lenda_ID` varchar(50) DEFAULT NULL,
   `AfatiRegjistrimit` varchar(50) DEFAULT NULL,
   `DataProvimit` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `datat_e_provimeve`
@@ -345,10 +345,19 @@ CREATE TABLE `rezervimet_online` (
   `student_ID` varchar(50) DEFAULT NULL,
   `lenda_ID` varchar(50) DEFAULT NULL,
   `sezoni_ID` varchar(50) DEFAULT NULL,
-  `more_content` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `more_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `DataProvimit` varchar(50) DEFAULT NULL,
   `DataRegjistrimitOnline` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `rezervimet_online`
+--
+
+INSERT INTO `rezervimet_online` (`rezervim_ID`, `data_ID`, `student_ID`, `lenda_ID`, `sezoni_ID`, `more_content`, `DataProvimit`, `DataRegjistrimitOnline`) VALUES
+(37, '7', '7', '7', '9', NULL, '09/07/2020', '07/28/20 08:02'),
+(38, '2', '15', '2', '9', NULL, '09/07/2020', '07/28/20 08:02'),
+(39, '4', '15', '4', '9', NULL, '09/07/2020', '07/28/20 08:02');
 
 -- --------------------------------------------------------
 
@@ -361,7 +370,7 @@ CREATE TABLE `sezonet` (
   `EmertimiSezonit` varchar(50) DEFAULT NULL,
   `Muaji` varchar(50) DEFAULT NULL,
   `Viti` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sezonet`
@@ -388,15 +397,15 @@ INSERT INTO `sezonet` (`sezoni_ID`, `EmertimiSezonit`, `Muaji`, `Viti`) VALUES
 
 CREATE TABLE `StGrades` (
   `id` bigint UNSIGNED NOT NULL,
-  `student_ID` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lenda_ID` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sezoni_ID` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_regyear` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_regperiodID` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cgrade100` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `GradeStr` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Nota` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Perpjekjet` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `student_ID` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lenda_ID` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sezoni_ID` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_regyear` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_regperiodID` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cgrade100` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `GradeStr` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Nota` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Perpjekjet` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -931,7 +940,7 @@ CREATE TABLE `studentet` (
   `Emri` varchar(50) DEFAULT NULL,
   `Mbiemri` varchar(50) DEFAULT NULL,
   `Statusi` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `studentet`
@@ -1037,7 +1046,7 @@ ALTER TABLE `lista_e_lendeve`
 -- AUTO_INCREMENT for table `rezervimet_online`
 --
 ALTER TABLE `rezervimet_online`
-  MODIFY `rezervim_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `rezervim_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `StGrades`

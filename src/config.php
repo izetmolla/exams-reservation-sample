@@ -5,7 +5,7 @@ $studentEmail = "Studenti15@uet.edu.al";
 $config = [
   "studentData" => ["Email", $studentEmail],
   //Vendos daten e mbarimit t e Sezonit per te hequr tabelen e rezervimeve  ose beje koment per ta caktivizuar
-  // "sezonData" => ["sezonet", "query" => "EmertimiSezonit='Sept' AND Viti='2020'", "expiredDate" => "08/31/2020"],
+  "sezonData" => ["sezonet", "query" => "EmertimiSezonit='Sept' AND Viti='2020'", "expiredDate" => "08/31/2020"],
 ];
 
 
@@ -16,14 +16,14 @@ $config = [
 
 
 // ndrysho te dhenat e MYSQL
-$servername = "localhost";
-$username = "newuser";
-$password = "milani10";
-$dbname = "uetlms";
+define("DB_SERVER", "localhost");
+define("DB_USERNAME", "newuser");
+define("DB_PASSWORD", "milani10");
+define("DB_NAME", "uetlms");
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+if($conn === false){
+  die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
 
