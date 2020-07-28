@@ -22,6 +22,7 @@ $theUnPassedSubjects = getUnPassedSubjects([$theStudent["student_ID"], $theActiv
 
 <body>
 
+
     <div class="userDetails">
         <b style="font-size:25;">Pershendetje: <?php echo $theStudent["Emri"] . " " . $theStudent["Mbiemri"] ?>!</b>
         <br>
