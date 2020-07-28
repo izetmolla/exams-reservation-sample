@@ -1,5 +1,19 @@
 <?php
 
+// Ndrysho emailin e studentit 
+$studentEmail = "Studenti15@uet.edu.al";
+$config = [
+  "studentData" => ["Email", $studentEmail],
+  //Vendos daten e mbarimit t e Sezonit per te hequr tabelen e rezervimeve  ose beje koment per ta caktivizuar
+  // "sezonData" => ["sezonet", "query" => "EmertimiSezonit='Sept' AND Viti='2020'", "expiredDate" => "08/31/2020"],
+];
+
+
+
+
+
+
+
 
 // ndrysho te dhenat e MYSQL
 $servername = "localhost";
@@ -14,12 +28,3 @@ if ($conn->connect_error) {
 
 
 
-// Ndrysho emailin e studentit 
-$studentEmail = "Studenti15@uet.edu.al";
-
-$config = [
-  "studentData" => ["Email", $studentEmail],
-
-  //Vendos daten e mbarimit t e Sezonit per te hequr tabelen e rezervimeve  ose beje koment per ta caktivizuar
-  "sezonData" => ["sezonet", "query" => "EmertimiSezonit='Sept' AND Viti='2020'", "expiredDate" => "08/31/2020"],
-];

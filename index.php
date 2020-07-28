@@ -150,8 +150,6 @@ $theUnPassedSubjects = getUnPassedSubjects([$theStudent["student_ID"], $theActiv
                                 data_ID
                             },
                             success: function(response) {
-
-
                                 // return null
                                 var data = JSON.parse(response)
                                 console.log(data)
@@ -161,7 +159,7 @@ $theUnPassedSubjects = getUnPassedSubjects([$theStudent["student_ID"], $theActiv
                                         'Lenda u rezervua me sukses.',
                                         'success'
                                     )
-                                    $('#reservationdiv-' + data.ii).html("U kry");
+                                    $('#reservationdiv-' + data.ii).html("<b>Rezervuar ne "+data.time+'</b>');
                                 }
                             }
                         });

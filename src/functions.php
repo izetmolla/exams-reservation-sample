@@ -1,6 +1,8 @@
 <?php
 require_once("config.php");
 
+
+
 $tables = [
   "studentsDB" => "studentet",
   "sezonDB" => ["sezonet", "sezoni_ID"],
@@ -9,8 +11,6 @@ $tables = [
   "examsDatesDB" => ["datat_e_provimeve", "lenda_ID", "sezoni_ID", "data_ID"],
   "reservationsDB" => ["rezervimet_online", "rezervim_ID", "data_ID", "student_ID", "lenda_ID", "sezoni_ID"]
 ];
-
-
 
 
 
@@ -162,7 +162,8 @@ function insertReservation($props)
     return json_encode([
       "status" => 1,
       "message" => "Rezervimi u krye me sukses",
-      "ii" => $props["lenda_ID"]
+      "ii" => $props["lenda_ID"],
+      "time"=> getTime(time())
     ]);
   } else {
     return json_encode([
@@ -213,4 +214,10 @@ function reserveExam($props)
   //   "DataProvimit" => $subjectData["DataProvimit"],
   //   "DataRegjistrimitOnline" => date("m/d/y") . " " . date("h:i"),
   // ]);
+}
+
+
+
+function getTime($time){
+ return date("m-d-y h:i", $time);
 }
